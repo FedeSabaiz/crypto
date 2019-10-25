@@ -1,8 +1,13 @@
 import React from 'react';
+import Header from './components/Header';
 
 const App = () => {
     return ( 
-        <h1>PROYECTO CRYPTO-CONVERT</h1>
+        <div>
+            <Header />
+            <h1>PROYECTO CRYPTO-CONVERT</h1>
+
+        </div>
      );
 }
  
