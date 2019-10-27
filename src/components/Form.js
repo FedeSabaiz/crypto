@@ -1,17 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {apiKey} from '../config/keys';
+import Error from './Error';
 import Cryptocoin from './Cryptocoin';
 
-const Form = () => {
+const Form = ({getData}) => {
 
     // Inicializando el state con hooks
     const [cryptocoins, setCrypto] = useState([]);
-    const [coinList, setCoinList] = useState('');
-    const [cryptoList, setCryptoList] = useState('');
-    const [consult, setConsult] = useState({
-        coin: '',
-        crypto: ''
-    })
     const [error, setError] = useState(false);
 
     // Usando refs de react para obtener los datos del formulario
@@ -35,7 +30,7 @@ const Form = () => {
         if( coinRef.current.value === '-Moneda-' || cryptoRef.current.value === '-Criptomoneda-') {
             setError(true);
         } else {
-            setConsult({
+            getData({
                 coin: coinRef.current.value,
                 crypto: cryptoRef.current.value
             });
@@ -45,14 +40,14 @@ const Form = () => {
         
     }
 
-    const errHtml = error === true ? <div style={{background: 'red', width: '100px', height: '100px'}} >Porfavor llena ambos campos para continuar.</div> : null;
+    const errHtml = error === true ? <Error /> : null;
     
     return ( 
 
         <form onSubmit={handleForm} >
             {errHtml}
             <label htmlFor='coin' >Elige tu moneda</label>
-            <select ref={coinRef}  onChange={(e) => setCoinList(e.target.value)} >
+            <select ref={coinRef}>
                 <option>-Moneda-</option>
                 <option value="MXN" >
                     Peso Mexicano
@@ -67,7 +62,7 @@ const Form = () => {
 
             <div>
                 <label htmlFor='crypto' >Elige una criptomoneda</label>
-                <select ref={cryptoRef} onChange={(e) => setCryptoList(e.target.value)} >
+                <select ref={cryptoRef}>
                     <option>-Criptomoneda-</option>
                     <Cryptocoin 
                         cryptocoins={cryptocoins}
@@ -78,8 +73,6 @@ const Form = () => {
             <input type='submit' value='Consultar' / >
         </form>
     );
-
-
 }
  
 export default Form;
