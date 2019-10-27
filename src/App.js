@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
+import Info from './components/Info';
 
 const App = () => {
 
@@ -10,12 +11,14 @@ const App = () => {
         crypto: ''
     });
 
-    const [fullData, getFullData] = useState({
+    const [fullData, getFull] = useState({
         change24hr: '',
         price: '',
         highDay: '',
         lowDay: ''
     })
+
+    const [showInfo, getInfo] = useState(false)
 
     // Hacemos la petición a la API
     useEffect(() => {
@@ -27,26 +30,28 @@ const App = () => {
             let response = await fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${dataCoins.crypto}&tsyms=${dataCoins.coin}`);
             let data = await response.json();
             
-
-            console.log(data);
+            getFull({
+                change24hr: data.DISPLAY[dataCoins.crypto][dataCoins.coin].CHANGE24HOUR,
+                price: data.DISPLAY[dataCoins.crypto][dataCoins.coin].PRICE,
+                highDay: data.DISPLAY[dataCoins.crypto][dataCoins.coin].HIGHDAY,
+                lowDay: data.DISPLAY[dataCoins.crypto][dataCoins.coin].LOWDAY
+            })
             
-            
+            getInfo(true);
         }
         
-            getFullData();
+        getFullData();
         
     }, [dataCoins.crypto, dataCoins.coin]);
 
-    // Variable que se renderiza si la consulta es satisfactoria.
-    // console.log(fullData);
-    
+    const dataInfo = showInfo === true ? <Info fullData={fullData} /> : null;
 
     return ( 
         <div>
             <Header />
             <h1>PROYECTO CRYPTO-CONVERT</h1>
             <Form getData={getData} />
-
+            {dataInfo}
         </div>
      );
 }
