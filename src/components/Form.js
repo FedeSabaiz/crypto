@@ -17,8 +17,20 @@ const Form = ({getData}) => {
         async function getDataCoins() {
             let response = await fetch(`https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD&api_key=${apiKey}`)
             let data = await response.json();
-            setCrypto(data.Data);
-            return data.Data
+            let d = [];
+            data.Data.forEach((x, y) => {
+                if (y <= 4) {
+
+                    console.log(x)  
+                    d.push(x);
+                }
+                
+            } )
+            console.log(d);
+            
+
+            
+            return setCrypto(d);
         }
 
         getDataCoins();
