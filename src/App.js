@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
 import Info from './components/Info';
+import Coin from './components/Coin';
 
 const App = () => {
 
@@ -52,6 +53,7 @@ const App = () => {
             <h1>PROYECTO CRYPTO-CONVERT</h1>
             <Form getData={getData} />
             {dataInfo}
+            <Coin />
         </div>
      );
 }
