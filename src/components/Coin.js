@@ -6,6 +6,14 @@ import { ReactComponent as Ethereum } from '../img/ethereum.svg';
 import { ReactComponent as Litecoin } from '../img/litecoin.svg';
 import { ReactComponent as Bcash } from '../img/bcash.svg';
 
+let containerCoin = {
+    width: '100%',
+    height: '200px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around'
+}
+
 let styleCoin = {
     width: '100px',
     height: '100px'
@@ -14,11 +22,8 @@ let styleCoin = {
 const Coin = () => {
     return ( 
         
-        <div>
-            <div>
-                <Bitcoin style={styleCoin} /> 
-
-            </div>
+        <div style={containerCoin} >
+            <Bitcoin style={styleCoin} /> 
             <Ethereum style={styleCoin} />
             <Eos style={styleCoin} />
             <Litecoin style={styleCoin} />
