@@ -18,8 +18,8 @@ const Form = ({getData}) => {
             let response = await fetch(`https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD&api_key=${apiKey}`)
             let data = await response.json();
             let d = [];
-            data.Data.forEach((x, y) => {
-                if (y <= 4) {
+            data.Data.forEach((x) => {
+                if (x.CoinInfo.Name === 'BTC' || x.CoinInfo.Name === 'ETH' || x.CoinInfo.Name === 'BCH' || x.CoinInfo.Name === 'EOS' || x.CoinInfo.Name === 'LTC') {
 
                     console.log(x)  
                     d.push(x);
@@ -54,36 +54,57 @@ const Form = ({getData}) => {
 
     const errHtml = error === true ? <Error /> : null;
     
+    
+    const data = cryptocoins.map((x) => {
+        return <option key={x.CoinInfo.Id} value={x.CoinInfo.Name} >{x.CoinInfo.FullName}</option>
+    });
+    
+    const containeForm = {
+        width: '100%',
+        height: '200px',
+        display: 'flex',
+        justifyContent: 'center'
+    }
+    
+    const formStyle = {
+        width: '35%',
+        height: '200px',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+    }
+
     return ( 
 
-        <form onSubmit={handleForm} >
-            {errHtml}
-            <label htmlFor='coin' >Elige tu moneda</label>
-            <select ref={coinRef}>
-                <option>-Moneda-</option>
-                <option value="MXN" >
-                    Peso Mexicano
-                </option>
-                <option value='USD' >
-                    Dolar Estadounidense
-                </option>
-                <option value='EUR' >
-                    Euro
-                </option>
-            </select>
-
-            <div>
-                <label htmlFor='crypto' >Elige una criptomoneda</label>
-                <select ref={cryptoRef}>
-                    <option>-Criptomoneda-</option>
-                    <Cryptocoin 
-                        cryptocoins={cryptocoins}
-                    />
+        <div style={containeForm} >
+            <form onSubmit={handleForm} style={formStyle} >
+                {errHtml}
+                <label htmlFor='coin' >Elige tu moneda</label>
+                <select ref={coinRef}>
+                    <option>-Moneda-</option>
+                    <option value="MXN" >
+                        Peso Mexicano
+                    </option>
+                    <option value='USD' >
+                        Dolar Estadounidense
+                    </option>
+                    <option value='EUR' >
+                        Euro
+                    </option>
                 </select>
-            </div>
 
-            <input type='submit' value='Consultar' / >
-        </form>
+                
+                    <label htmlFor='crypto' >Elige una criptomoneda</label>
+                    <select ref={cryptoRef}>
+                        <option>-Criptomoneda-</option>
+                            {data}
+                    </select>
+                
+
+                <input type='submit' value='Consultar' / >
+            </form>
+        </div>
+    
     );
 }
  
