@@ -1,0 +1,76 @@
+body, html {
+    overflow: hidden;
+    z-index: -10;
+}
+
+form {
+    border-style: solid;
+    border-color: rgb(0, 17, 255);
+    transform: translate(0px);
+    transition: 0.4s ease-out;
+}
+
+.row {
+    display: flex;
+    z-index: -10;
+}
+
+.formClick {
+    transform: translate(-700px);
+    transition: .6s ease-out;
+}
+
+.btc {
+    background: #BAB264;
+    z-index: -10;
+}
+
+.eth {
+    background: #484848;
+    z-index: -10;
+}
+
+.eos {
+    background: #464F6B;
+    z-index: -10;
+}
+
+.ltc {
+    background: #6E6E58;
+    z-index: -10;
+}
+
+.bch {
+    background: #249245;
+    z-index: -10;
+}
+
+// Estilos de la sección con información de la criptomoneda
+.info {
+    // transform: translate(-25px);
+    
+    transition: .5s, ease-out;
+
+}
+
+.info > div > p {
+    font-size: 25px;
+}
+
+span {
+    padding: 2px;
+    background: #CCCCCC;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    z-index: 10;
+}
+
+.price::after {
+    content: "";
+    width: 100px;
+    height: 20px;
+    display: flex;
+    position: absolute;
+    background: red;
+    z-index: -5;
+}

@@ -1,4 +1,12 @@
 import React, {useState, useEffect} from 'react';
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route, 
+    Link
+} from 'react-router-dom';
+
 import Header from './components/Header';
 import Form from './components/Form';
 import Info from './components/Info';
@@ -18,6 +26,8 @@ const App = () => {
         highDay: '',
         lowDay: ''
     })
+
+    // Hook para cambiar la posición del form
 
     const [showInfo, getInfo] = useState(false)
 
@@ -45,16 +55,20 @@ const App = () => {
         
     }, [dataCoins.crypto, dataCoins.coin]);
 
-    const dataInfo = showInfo === true ? <Info fullData={fullData} /> : null;
+    const dataInfo = (showInfo === true) ? <Info fullData={fullData} changeClassName={dataCoins.crypto.toLowerCase()} /> : null;
 
     return ( 
-        <div>
+            <>
             <Header />
-            <h1>PROYECTO CRYPTO-CONVERT</h1>
-            <Form getData={getData} />
-            {dataInfo}
-            <Coin />
-        </div>
+                
+                    <h1>PROYECTO CRYPTO-CONVERT</h1>
+                    <div className='row' >
+                        <Form getData={getData} />
+                        {dataInfo}
+                    </div>            
+                        <Coin />
+            </> 
+       
      );
 }
  

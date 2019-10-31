@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Info = ({fullData}) => {
+const Info = ({fullData, changeClassName}) => {
     console.log(fullData);
     
     return ( 
-        <div>
+        <div className={changeClassName} >
             <div>
                 <p>
-                    Precio: <span>{fullData.price}</span>
+                    Precio: <span className='price'>{fullData.price}</span>
                 </p>
             </div>
             <div>
