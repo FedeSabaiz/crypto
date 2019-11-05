@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
-
-import {
+import { 
     BrowserRouter as Router,
     Switch,
-    Route, 
+    Route,
     Link
 } from 'react-router-dom';
-
+import Arrow from './components/Arrow';
 import Header from './components/Header';
+import Home from './components/Home';
 import Form from './components/Form';
 import Info from './components/Info';
 import Coin from './components/Coin';
@@ -55,19 +55,40 @@ const App = () => {
         
     }, [dataCoins.crypto, dataCoins.coin]);
 
-    const dataInfo = (showInfo === true) ? <Info fullData={fullData} changeClassName={dataCoins.crypto.toLowerCase()} /> : null;
+    // Handler de la flecha 
+    const handleArrowBack = () => {
+        getData({
+            coin: '',
+            crypto: ''
+        })
+
+        document.body.setAttribute('class', dataCoins.crypto)
+        document.getElementById('myForm').reset();
+        document.getElementById('btn').setAttribute('class', 'arrow')
+    }
+    
+    // Flecha que resetea y regresa a la pantalla principal
+    const flecha = <button id='btn' onClick={handleArrowBack} >Regresar</button>
 
     return ( 
-            <>
-            <Header />
-                
-                    <h1>PROYECTO CRYPTO-CONVERT</h1>
-                    <div className='row' >
-                        <Form getData={getData} />
-                        {dataInfo}
-                    </div>            
-                        <Coin />
-            </> 
+            <Router>
+                <Header />
+                    <h1>Compra una criptomoneda</h1>
+                    <Switch>
+                        <Route exact path='/'>
+                            <Home />
+                            <div className='row' >
+                                <Form getData={getData} formClassName={dataCoins} />
+                                
+                                <Info fullData={fullData} changeClassName={dataCoins.crypto.toLowerCase()} />
+                                {flecha}
+                                
+                            </div>            
+                        </Route>
+                        <Route exact path='/crypto' >
+                        </Route>
+                    </Switch>
+            </Router> 
        
      );
 }

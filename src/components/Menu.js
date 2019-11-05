@@ -10,9 +10,7 @@ const Menu = () => {
     return ( 
         <nav>
             <ul style={stylesLinks}>
-                <li>Home</li>
-                <li>Diferentes Cryptos</li>
-                <li>Contácto</li>
+                <li><a>Github</a></li>
             </ul>
         </nav>
      );

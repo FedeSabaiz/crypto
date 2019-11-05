@@ -1,13 +1,28 @@
 body, html {
-    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: .5s ease-in-out;
+    background: white;
+    height: 100%;
     z-index: -10;
+    overflow: hidden;
+    font-family: 'Major Mono Display', monospace;
 }
 
-form {
-    border-style: solid;
-    border-color: rgb(0, 17, 255);
-    transform: translate(0px);
-    transition: 0.4s ease-out;
+h1 {
+    text-align: center;
+}
+
+.grupoOptions {
+    font-family: 'Major Mono Display', monospace;
+}
+
+.click {
+    position: absolute;
+    left: 33%;
+    transform: scale(1);
+    transition: left 0.4s cubic-bezier(0,.57,.19,.98) .3s, transform .4s cubic-bezier(0,.27,.18,1) .8s ;
 }
 
 .row {
@@ -15,62 +30,510 @@ form {
     z-index: -10;
 }
 
-.formClick {
-    transform: translate(-700px);
-    transition: .6s ease-out;
+button {
+    transition: .5s ease-in;
+    padding: 5px;
+    background: white;
+    font-family: 'Major Mono Display', monospace;
+    position: absolute;
+    right: -20%;
 }
 
+.btc-arrow {
+    position: absolute;
+    right: 10%;
+    background: #F7EC8F;
+
+    &:hover {
+        transition: .4s ease-in;
+        background: #D5CB72;
+    }
+}
+
+.eth-arrow {
+    position: absolute;
+    right: 10%;
+    background: #A3A3A3;
+
+    &:hover {
+        transition: .4s ease-in;
+        background: #CCCCCC;
+    }
+}
+
+.eos-arrow {
+    color: white;
+    position: absolute;
+    right: 10%;
+    background: #464F6B;
+
+    &:hover {
+        transition: .4s ease-in;
+        background: #546BC3;
+    }
+}
+
+.ltc-arrow {
+    position: absolute;
+    right: 10%;
+    background: #908C53;
+
+    &:hover {
+        transition: .4s ease-in;
+        background: #6E6E58;
+    }
+}
+
+.bch-arrow {
+    position: absolute;
+    right: 10%;
+    background: #249245;
+
+    &:hover {
+        transition: .4s ease-in;
+        background: #98C85E;
+    }
+}
+
+.eth-arrow {
+    position: absolute;
+    right: 10%;
+}
+
+///
+
+.ltcclick,
+.eosclick,
+.ethclick,
+.btcclick,
+.bchclick {
+    position: absolute;
+    transform: scale(0.85);
+    transition: transform .6s cubic-bezier(0,.57,.19,.98), left .6s cubic-bezier(0,.57,.19,.98) .5s ;
+    left: -50%;
+}
+/////////////////
+
 .btc {
+    transition: .5s ease-in-out;
     background: #BAB264;
     z-index: -10;
 }
 
 .eth {
+    transition: .5s ease-in-out;
     background: #484848;
     z-index: -10;
 }
 
 .eos {
+    transition: .5s ease-in-out;
     background: #464F6B;
     z-index: -10;
 }
 
 .ltc {
+    transition: .5s ease-in-out;
     background: #6E6E58;
     z-index: -10;
 }
 
 .bch {
+    transition: .5s ease-in-out;
     background: #249245;
     z-index: -10;
 }
 
 // Estilos de la sección con información de la criptomoneda
-.info {
-    // transform: translate(-25px);
-    
-    transition: .5s, ease-out;
-
+.-info {
+    transform: scale(0.85);
+    transition: transform .6s cubic-bezier(0,.57,.19,.98) , right .6s cubic-bezier(0,.57,.19,.98) .3s ;
+    position: absolute;
+    right: -1000px;
+    width: 800px;
+}
+.-info > div {
+    display: flex;
 }
 
-.info > div > p {
-    font-size: 25px;
+.-info > div > p {
+    transition: .5s ease-in;
+    border:.5px solid ;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 60px;
+    background: rgba(243, 239, 239, .5);
+    font-size: 1.3rem;
+    z-index: 2000;
+    display: block ruby;
+}
+////////////
+
+
+.eth-info {
+    transform: scale(1);
+    transition: transform .4s ease-out .8s, right .4s .4s;
+    position: absolute;
+    right: 9%;
+    width: 800px;
 }
 
-span {
-    padding: 2px;
-    background: #CCCCCC;
+.eth-info > div {
+    display: flex;
+}
+
+.eth-info > div > p {
+    border:.5px solid ;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 60px;
+    background: #A3A3A3;
+    font-size: 1.3rem;
+    z-index: 2000;
+    display: block ruby;
+}
+
+.btc-info {
+    transform: scale(1);
+    transition: transform .4s ease-out .8s, right .4s .4s;
+    position: absolute;
+    right: 9%;
+    width: 800px;
+}
+
+.btc-info > div {
+    display: flex;
+}
+
+.btc-info > div > p {
+    border:.5px solid ;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 60px;
+    background: #F7EC8F;
+    font-size: 1.3rem;
+    z-index: 2000;
+    display: block ruby;
+}
+
+.eos-info {
+    transform: scale(1);
+    transition: transform .4s ease-out .8s, right .4s .4s;
+    position: absolute;
+    right: 9%;
+    width: 800px;
+    color: white;
+}
+
+.eos-info > div {
+    display: flex;
+}
+
+.eos-info > div > p {
+    border:.5px solid ;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 60px;
+    background: #3A4985;
+    font-size: 1.3rem;
+    z-index: 2000;
+    display: block ruby;
+}
+
+.ltc-info {
+    transform: scale(1);
+    transition: transform .4s ease-out .8s, right .4s .4s;
+    position: absolute;
+    right: 9%;
+    width: 800px;
+}
+
+.ltc-info > div {
+    display: flex;
+}
+
+.ltc-info > div > p {
+    border:.5px solid ;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 60px;
+    background: #908C53;
+    font-size: 1.3rem;
+    z-index: 2000;
+    display: block ruby;
+}
+
+.bch-info {
+    transform: scale(1);
+    transition: transform .4s ease-out .8s, right .4s .4s;
+    position: absolute;
+    right: 9%;
+    width: 800px;
+}
+
+.bch-info > div {
+    display: flex;
+}
+
+.bch-info > div > p {
+    border:.5px solid ;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 60px;
+    background: #1A6A33;
+    font-size: 1.3rem;
+    z-index: 2000;
+    display: block ruby;
+}
+
+//// 
+.price {
+    transition: .2s ease-in;
+    padding: 8px;
+    background: rgba(238, 228, 228, .5);
     border-style: solid;
     border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 26px;
+    z-index: 10;
+}
+.chg24 {
+    transition: .2s ease-in;
+    padding: 8px;
+    background: rgba(238, 228, 228, .5);
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 125px;
+    z-index: 10;
+}
+.highday {
+    transition: .2s ease-in;
+    padding: 8px;
+    background: rgba(238, 228, 228, .5);
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 222px;
+    z-index: 10;
+}
+.lowday {
+    transition: .2s ease-in;
+    padding: 8px;
+    background: rgba(238, 228, 228, .5);
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 320px;
     z-index: 10;
 }
 
-.price::after {
-    content: "";
-    width: 100px;
-    height: 20px;
-    display: flex;
+///
+
+.ethprice {
+    padding: 8px;
+    background: #CCCCCC;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
     position: absolute;
-    background: red;
-    z-index: -5;
+    top: 26px;
+    z-index: 10;
+}
+
+.ethchg24 {
+    padding: 8px;
+    background: #CCCCCC;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 125px;
+    z-index: 10;
+}
+
+.ethhighday {
+    padding: 8px;
+    background: #CCCCCC;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 222px;
+    z-index: 10;
+}
+
+.ethlowday {
+    padding: 8px;
+    background: #CCCCCC;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 320px;
+    z-index: 10;
+}
+
+// Estilos de la información de bth
+.btcprice {
+    padding: 8px;
+    background: #FCF599;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 26px;
+    z-index: 10;
+}
+
+.btcchg24 {
+    padding: 8px;
+    background: #FCF599;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 125px;
+    z-index: 10;
+}
+
+.btchighday {
+    padding: 8px;
+    background: #FCF599;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 222px;
+    z-index: 10;
+}
+
+.btclowday {
+    padding: 8px;
+    background: #FCF599;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 320px;
+    z-index: 10;
+}
+
+// Estilos eos info
+.eosprice {
+    padding: 8px;
+    background: #546BC3;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 26px;
+    z-index: 10;
+}
+
+.eoschg24 {
+    padding: 8px;
+    background: #546BC3;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 125px;
+    z-index: 10;
+}
+
+.eoshighday {
+    padding: 8px;
+    background: #546BC3;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 222px;
+    z-index: 10;
+}
+
+.eoslowday {
+    padding: 8px;
+    background: #546BC3;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 320px;
+    z-index: 10;
+}
+
+.ltcprice {
+    padding: 8px;
+    background: #8B895F;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 26px;
+    z-index: 10;
+}
+
+.ltcchg24 {
+    padding: 8px;
+    background: #8B895F;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 125px;
+    z-index: 10;
+}
+
+.ltchighday {
+    padding: 8px;
+    background: #8B895F;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 222px;
+    z-index: 10;
+}
+
+.ltclowday {
+    padding: 8px;
+    background: #8B895F;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 320px;
+    z-index: 10;
+}
+
+.bchprice {
+    padding: 8px;
+    background: #98C85E;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 26px;
+    z-index: 10;
+}
+
+.bchchg24 {
+    padding: 8px;
+    background: #98C85E;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 125px;
+    z-index: 10;
+}
+
+.bchhighday {
+    padding: 8px;
+    background: #98C85E;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 222px;
+    z-index: 10;
+}
+
+.bchlowday {
+    padding: 8px;
+    background: #98C85E;
+    border-style: solid;
+    border-width: 0px, 2px, 2px, 0px;
+    position: absolute;
+    top: 320px;
+    z-index: 10;
 }

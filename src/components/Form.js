@@ -4,7 +4,7 @@ import Error from './Error';
 import '../css/styleForm.scss';
 import Cryptocoin from './Cryptocoin';
 
-const Form = ({getData}) => {
+const Form = ({getData, formClassName}) => {
 
     // Inicializando el state con hooks
     const [cryptocoins, setCrypto] = useState([]);
@@ -59,6 +59,8 @@ const Form = ({getData}) => {
             })
 
         }
+        let x = document.getElementById('btn');
+        x.setAttribute('class', `${changeBody.body.toLowerCase()}-arrow`);
     }
 
     // Handlre del onchange de criptomoneda
@@ -90,32 +92,41 @@ const Form = ({getData}) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
+        fontFamily: 'Major Mono Display'
     }
+
+    let myObj = document.getElementsByTagName('option');
+    console.log(myObj.item(0));
+    
 
     return ( 
 
         <div style={containeForm} >
-            <form onSubmit={handleForm} style={formStyle} className={classForm.movForm} >
+            <form onSubmit={handleForm} style={formStyle} className={`${formClassName.crypto.toLowerCase()}click`} id='myForm' >
                 {errHtml}
                 <label htmlFor='coin' >Elige tu moneda</label>
-                <select ref={coinRef}>
-                    <option>-Moneda-</option>
-                    <option value="MXN" >
-                        Peso Mexicano
-                    </option>
-                    <option value='USD' >
-                        Dolar Estadounidense
-                    </option>
-                    <option value='EUR' >
-                        Euro
-                    </option>
+                <select id='ref' ref={coinRef}>
+                    <optgroup className='grupoOptions'>
+                        <option >-Moneda-</option>
+                        <option value="MXN" >
+                            Peso Mexicano
+                        </option>
+                        <option value='USD' >
+                            Dolar Estadounidense
+                        </option>
+                        <option value='EUR' >
+                            Euro
+                        </option>
+                    </optgroup>
                 </select>
 
                 
                     <label htmlFor='crypto' >Elige una criptomoneda</label>
-                    <select ref={cryptoRef} onChange={handleChangeCryp} >
-                        <option>-Criptomoneda-</option>
+                    <select id='selectCryoto' ref={cryptoRef} onChange={handleChangeCryp} >
+                        <optgroup className='grupoOptions'>
+                            <option>-Criptomoneda-</option>
                             {data}
+                        </optgroup>
                     </select>
                 
 
