@@ -20,14 +20,57 @@ let styleCoin = {
 }
 
 const Coin = () => {
+ 
+    // Handler que se dispara con el click en las monedas
+    const handkeClickCrypto = (e) => {
+        for(let y = 0; y <= 5; y++) {
+            let getCrypto = e.currentTarget.className.animVal;
+            if(getCrypto === 'bitcoin') {
+                
+                if(document.getElementById('selectCryoto').options.item(y).text.toLowerCase() === 'bitcoin'){
+                    document.getElementById('selectCryoto').options.item(y).selected = 'selected';
+                }
+                document.body.setAttribute('class', 'btc');        
+            }
+            if(getCrypto === 'ethereum') {
+                if(document.getElementById('selectCryoto').options.item(y).text.toLowerCase() === 'ethereum'){
+                    document.getElementById('selectCryoto').options.item(y).selected = 'selected';
+                }
+                document.body.setAttribute('class', 'eth');
+            }
+            if(getCrypto === 'eosSvg') {
+                
+                if(document.getElementById('selectCryoto').options.item(y).text.toLowerCase() === 'eos'){
+                    document.getElementById('selectCryoto').options.item(y).selected = 'selected';
+                }
+                document.body.setAttribute('class', 'eos');
+            }
+            if(getCrypto === 'litecoin') {
+                if(document.getElementById('selectCryoto').options.item(y).text.toLowerCase() === 'litecoin'){
+                    document.getElementById('selectCryoto').options.item(y).selected = 'selected';
+                }
+                document.body.setAttribute('class', 'ltc');
+            }
+            if(getCrypto === 'bitcoincash') {
+                
+                if(document.getElementById('selectCryoto').options.item(y).text.toLowerCase().replace(" ", "") === 'bitcoincash'){
+                    document.getElementById('selectCryoto').options.item(y).selected = 'selected';
+                }
+                document.body.setAttribute('class', 'bch');
+            }
+
+
+        } 
+    }
+ 
     return ( 
         
         <div style={containerCoin} >
-            <Bitcoin style={styleCoin} /> 
-            <Ethereum style={styleCoin} />
-            <Eos style={styleCoin} />
-            <Litecoin style={styleCoin} />
-            <Bcash style={styleCoin} />
+            <Bitcoin className='bitcoin'  style={styleCoin} onClick={handkeClickCrypto}/> 
+            <Ethereum className='ethereum' style={styleCoin} onClick={handkeClickCrypto}/>
+            <Eos className='eosSvg' style={styleCoin} onClick={handkeClickCrypto}/>
+            <Litecoin className='litecoin' style={styleCoin} onClick={handkeClickCrypto} />
+            <Bcash className='bitcoincash' style={styleCoin} onClick={handkeClickCrypto}/>
 
         </div>
         

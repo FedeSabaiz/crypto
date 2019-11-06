@@ -60,7 +60,32 @@ const Form = ({getData, formClassName}) => {
 
         }
         let x = document.getElementById('btn');
-        x.setAttribute('class', `${changeBody.body.toLowerCase()}-arrow`);
+
+        for(let i = 0; i <= 5; i++) {
+            let coin = document.getElementById('selectCryoto').options.item(i).value.toLowerCase();
+            if(coin === 'btc' && document.getElementById('selectCryoto').options.item(i).selected) {
+                console.log(document.getElementById('selectCryoto').options.item(i).selected)
+                return x.setAttribute('class', `${coin}-arrow`);
+            }
+
+            if(coin === 'eth' && document.getElementById('selectCryoto').options.item(i).selected) {
+                return x.setAttribute('class', `${coin}-arrow`);
+            }
+
+            if(coin === 'eos' && document.getElementById('selectCryoto').options.item(i).selected) {
+                return x.setAttribute('class', `${coin}-arrow`);
+            }
+
+            if(coin === 'ltc' && document.getElementById('selectCryoto').options.item(i).selected) {
+                return x.setAttribute('class', `${coin}-arrow`);
+            }
+
+            if(coin === 'bch' && document.getElementById('selectCryoto').options.item(i).selected) {
+                return x.setAttribute('class', `${coin}-arrow`);
+            }
+        }
+
+        // x.setAttribute('class', `${changeBody.body.toLowerCase()}-arrow`);
     }
 
     // Handlre del onchange de criptomoneda
