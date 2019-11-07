@@ -1,0 +1,182 @@
+@media (max-width: 400px) {
+
+    .arrow {
+        top: 94%;
+    }
+
+    .-info {
+        // transform: scale(0.50);
+        transition: transform .4s cubic-bezier(0,.57,.19,.98) , right .6s cubic-bezier(0,.57,.19,.98) .3s ;
+        position: absolute;
+        right: -100%;
+        width: 100%;
+    }
+
+    .-info > div > p {
+        font-size: 0.6rem;
+    }
+
+    //// 
+    .price {
+        top: 15px;
+    }
+    .chg24 {
+        top: 77px;
+    }
+    .highday {
+        top: 139px;
+    }
+    .lowday {
+        top: 201px;
+    }
+
+    .eth-info {
+        width: 100%;
+        right: -8%;
+    }
+
+    .eth-info > div > p {
+        font-size: .6rem;
+    }
+
+    .ethprice {
+        top: 15px;
+    }
+
+    .ethchg24 {
+        top: 77px;
+    }
+
+    .ethhighday {
+        top: 139px;
+    }
+
+    .ethlowday {
+        top: 201px;
+    }
+
+    .eth-arrow {
+        top: 94%;
+    }
+
+    //btc info
+    .btc-info {
+        width: 100%;
+        right: -8%;
+    }
+
+    .btc-info > div > p {
+        font-size: .6rem;
+    }
+
+    .btcprice {
+        top: 15px;
+    }
+
+    .btcchg24 {
+        top: 77px;
+    }
+
+    .btchighday {
+        top: 139px;
+    }
+
+    .btclowday {
+        top: 201px;
+    }
+
+    .btc-arrow {
+        top: 94%;
+    }
+
+    //eos- info
+    .eos-info {
+        width: 100%;
+        right: -8%;
+    }
+
+    .eos-info > div > p {
+        font-size: .6rem;
+    }
+
+    .eosprice {
+        top: 15px;
+    }
+
+    .eoschg24 {
+        top: 77px;
+    }
+
+    .eoshighday {
+        top: 139px;
+    }
+
+    .eoslowday {
+        top: 201px;
+    }
+
+    .eos-arrow {
+        top: 94%;
+    }
+
+    //ltc info
+    .ltc-info {
+        width: 100%;
+        right: -8%;
+    }
+
+    .ltc-info > div > p {
+        font-size: .6rem;
+    }
+
+    .ltcprice {
+        top: 15px;
+    }
+
+    .ltcchg24 {
+        top: 77px;
+    }
+
+    .ltchighday {
+        top: 139px;
+    }
+
+    .ltclowday {
+        top: 201px;
+    }
+
+    .ltc-arrow {
+        top: 94%;
+    }
+
+    //bch info
+    .bch-info {
+        width: 100%;
+        right: -8%;
+    }
+
+    .bch-info > div > p {
+        font-size: .6rem;
+    }
+
+    .bchprice {
+        top: 15px;
+    }
+
+    .bchchg24 {
+        top: 77px;
+    }
+
+    .bchhighday {
+        top: 139px;
+    }
+
+    .bchlowday {
+        top: 201px;
+    }
+
+    .bch-arrow {
+        top: 94%;
+    }
+}
+

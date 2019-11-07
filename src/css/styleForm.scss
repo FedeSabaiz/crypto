@@ -4,7 +4,7 @@ body, html {
     width: 100%;
     margin: 0;
     padding: 0;
-    transition: .5s ease-in-out;
+    transition: background .5s ease-in-out;
     background: white;
     height: 100%;
     z-index: -10;
@@ -37,7 +37,7 @@ button {
     background: white;
     font-family: 'Major Mono Display', monospace;
     position: absolute;
-    right: -20%;
+    right: -25%;
 }
 
 .btc-arrow {
@@ -150,7 +150,7 @@ button {
     transform: scale(0.85);
     transition: transform .6s cubic-bezier(0,.57,.19,.98) , right .6s cubic-bezier(0,.57,.19,.98) .3s ;
     position: absolute;
-    right: -1000px;
+    right: -100%;
     width: 800px;
 }
 .-info > div {

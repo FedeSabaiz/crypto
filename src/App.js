@@ -12,6 +12,8 @@ import Form from './components/Form';
 import Info from './components/Info';
 import Coin from './components/Coin';
 
+import './css/mediaQueries.scss'
+
 const App = () => {
 
     // Hooks para obtener los datos de Form
