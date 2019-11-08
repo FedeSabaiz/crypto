@@ -1,8 +1,9 @@
 import React from 'react';
+import logo from '../img/logopng.png'
 
 const Logo = () => {
     return ( 
-        <div style={{background:"red", width:"50px", height:"50px"}} ></div>
+        <img src={logo} style={{width: '150px', height: '100px'}}></img>
     );
 }
  
