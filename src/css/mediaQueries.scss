@@ -1,4 +1,4 @@
-@media (max-width: 400px) {
+@media (max-width: 800px) {
 
    .bitcoin,
    .ethereum,
@@ -42,6 +42,7 @@
     .eth-info {
         width: 100%;
         right: -8%;
+        bottom: 10%;
     }
 
     .eth-info > div > p {
@@ -72,6 +73,7 @@
     .btc-info {
         width: 100%;
         right: -8%;
+        bottom: 10%;
     }
 
     .btc-info > div > p {
@@ -102,6 +104,7 @@
     .eos-info {
         width: 100%;
         right: -8%;
+        bottom: 10%;
     }
 
     .eos-info > div > p {
@@ -132,6 +135,7 @@
     .ltc-info {
         width: 100%;
         right: -8%;
+        bottom: 10%;
     }
 
     .ltc-info > div > p {
@@ -162,6 +166,7 @@
     .bch-info {
         width: 100%;
         right: -8%;
+        bottom: 10%;
     }
 
     .bch-info > div > p {
@@ -188,4 +193,3 @@
         top: 94%;
     }
 }
-

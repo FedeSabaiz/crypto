@@ -108,7 +108,9 @@ const Form = ({getData, formClassName}) => {
         width: '100%',
         height: '200px',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        position: 'absolute',
+        bottom: '10%'
     }
     
     const formStyle = {
@@ -129,7 +131,7 @@ const Form = ({getData, formClassName}) => {
         <div style={containeForm} >
             <form onSubmit={handleForm} style={formStyle} className={`${formClassName.crypto.toLowerCase()}click`} id='myForm' >
                 {errHtml}
-                <label htmlFor='coin' >Elige tu moneda</label>
+                <label htmlFor='coin' >Elige el tipo de cambio:</label>
                 <select id='ref' ref={coinRef}>
                     <optgroup className='grupoOptions'>
                         <option >-Moneda-</option>
@@ -146,7 +148,7 @@ const Form = ({getData, formClassName}) => {
                 </select>
 
                 
-                    <label htmlFor='crypto' >Elige una criptomoneda</label>
+                    <label htmlFor='crypto' >Elige una criptomoneda:</label>
                     <select id='selectCryoto' ref={cryptoRef} onChange={handleChangeCryp} >
                         <optgroup className='grupoOptions'>
                             <option>-Criptomoneda-</option>
