@@ -8,15 +8,10 @@ import { ReactComponent as Bcash } from '../img/bcash.svg';
 
 let containerCoin = {
     width: '100%',
-    height: '200px',
+    height: '50%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-around'
-}
-
-let styleCoin = {
-    width: '100px',
-    height: '100px'
 }
 
 const Coin = () => {
@@ -66,11 +61,11 @@ const Coin = () => {
     return ( 
         
         <div style={containerCoin} >
-            <Bitcoin className='bitcoin'  style={styleCoin} onClick={handkeClickCrypto}/> 
-            <Ethereum className='ethereum' style={styleCoin} onClick={handkeClickCrypto}/>
-            <Eos className='eosSvg' style={styleCoin} onClick={handkeClickCrypto}/>
-            <Litecoin className='litecoin' style={styleCoin} onClick={handkeClickCrypto} />
-            <Bcash className='bitcoincash' style={styleCoin} onClick={handkeClickCrypto}/>
+            <Bitcoin className='bitcoin'  onClick={handkeClickCrypto}/> 
+            <Ethereum className='ethereum' onClick={handkeClickCrypto}/>
+            <Eos className='eosSvg' onClick={handkeClickCrypto}/>
+            <Litecoin className='litecoin' onClick={handkeClickCrypto} />
+            <Bcash className='bitcoincash' onClick={handkeClickCrypto}/>
 
         </div>
         
