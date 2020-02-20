@@ -12,6 +12,10 @@ import Form from './components/Form';
 import Info from './components/Info';
 import Coin from './components/Coin';
 
+// Redux
+import { Provider } from 'react-redux';
+import store from './store';
+
 import './css/mediaQueries.scss'
 
 const App = () => {
@@ -74,7 +78,8 @@ const App = () => {
 
     return ( 
             <Router>
-                <Header />
+                <Provider store={store}>
+                    <Header />
                     <h1>Compra una criptomoneda</h1>
                     <Switch>
                         <Route exact path='/'>
@@ -90,6 +95,7 @@ const App = () => {
                         <Route exact path='/crypto' >
                         </Route>
                     </Switch>
+                </Provider>
             </Router> 
        
      );
